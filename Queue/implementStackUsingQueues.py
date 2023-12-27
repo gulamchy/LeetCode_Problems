@@ -47,9 +47,9 @@ class MyStack:
         self.stack.append(x)
 
     def pop(self) -> int:
-        if self.empty():
-            return None
-        return self.stack.pop()
+        for i in range(len(self.stack)-1):
+            self.push(self.stack.popleft())
+        return self.stack.popleft()
 
 
     def top(self) -> int:
